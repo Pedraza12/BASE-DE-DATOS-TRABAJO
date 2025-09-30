@@ -19,13 +19,15 @@ fecha_de_publicación date not null,
 idioma varchar (100)
 );
 CREATE TABLE Publicación_Autor(
-id_autor INT PRIMARY KEY AUTO_INCREMENT,
-id_Publicación INT PRIMARY KEY auto_increment,
 id_Publicación_Autor INT PRIMARY KEY auto_increment,
+id_autor INT not null,
+id_Publicación INT not null,
 nombre varchar(100) NOT NULL,
 fecha_de_publicación date not null,
 
 constraint fk_AUTOR FOREIGN KEY (id_AUTOR) REFERENCES AUTOR (id_AUTOR),
-constraint fk_Publicación foreign key (id_Publicación) references AUTOR (id_Publicación)
+constraint fk_Publicación foreign key (id_Publicación) references Publicación (id_Publicación)
 );
+INSERT INTO Autor (nombre,apellidos,id_Autor,nacionalidad,fecha_de_nacimiento,correo)
+VALUES (101,'MATEO','Ramirez','Colombia','1998-05-14','Definido');
 
